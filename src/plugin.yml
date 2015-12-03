@@ -1,0 +1,12 @@
+name: ArchaniaAddons
+author: Anml
+main: me.anml.archaniafactions.Main
+version: 1.0
+description: Archania Addons
+
+commands:
+  youtube:
+  twitch:
+  adadmin:
+  ad:
+
