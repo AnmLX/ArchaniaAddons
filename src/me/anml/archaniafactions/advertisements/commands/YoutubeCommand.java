@@ -33,7 +33,7 @@ public class YoutubeCommand implements CommandExecutor {
                                         if (Main.getConfirmedYoutube().contains(player)) {
                                             Main.getConfirmedYoutube().remove(player);
                                             for (Player p : Bukkit.getOnlinePlayers()) {
-                                                p.sendMessage(messageManager.colorize("&c[&4Alert&c] &6" + player.getName() + " &ahas posted a video of Archania at &b" + link + " &a!"));
+                                                p.sendMessage(messageManager.colorize("&c[&4Alert&c] &6" + player.getName() + " &ahas posted a video of Archania at &b" + link));
                                             }
                                             Main.getWaitingYoutube().put(player.getUniqueId(), System.currentTimeMillis() + 7200000);
                                             return true;
@@ -41,7 +41,7 @@ public class YoutubeCommand implements CommandExecutor {
 
                                             Main.getConfirmedYoutube().add(player);
                                             player.sendMessage(messageManager.colorize("&aYou must retype the command if you wish to broadcast the message below to the network."));
-                                            player.sendMessage(messageManager.colorize("&fMessage: &6" + player.getName() + " &ahas posted a video of Archania at &b" + link + " &a!"));
+                                            player.sendMessage(messageManager.colorize("&fMessage: &6" + player.getName() + " &ahas posted a video of Archania at &b" + link));
                                             return false;
 
                                         }

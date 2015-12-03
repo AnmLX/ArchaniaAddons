@@ -33,7 +33,7 @@ public class TwitchCommand implements CommandExecutor {
                                         if (Main.getConfirmedTwitch().contains(player)) {
                                             Main.getConfirmedTwitch().remove(player);
                                             for (Player p : Bukkit.getOnlinePlayers()) {
-                                                p.sendMessage(messageManager.colorize("&c[&4Alert&c] &5" + player.getName() + " &ais currently livestreaming at &b" + link + " &a!"));
+                                                p.sendMessage(messageManager.colorize("&c[&4Alert&c] &5" + player.getName() + " &ais currently livestreaming at &b" + link));
                                             }
                                             Main.getWaitingTwitch().put(player.getUniqueId(), System.currentTimeMillis() + 7200000);
                                             return true;
@@ -41,7 +41,7 @@ public class TwitchCommand implements CommandExecutor {
 
                                             Main.getConfirmedTwitch().add(player);
                                             player.sendMessage(messageManager.colorize("&aYou must retype the command if you wish to broadcast the message below to the network."));
-                                            player.sendMessage(messageManager.colorize("&eMessage: &5" + player.getName() + " &ais currently livestreaming at &b" + link + " &a!"));
+                                            player.sendMessage(messageManager.colorize("&eMessage: &5" + player.getName() + " &ais currently livestreaming at &b" + link));
                                             return false;
 
                                         }
