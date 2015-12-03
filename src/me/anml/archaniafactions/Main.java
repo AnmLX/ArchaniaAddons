@@ -15,16 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * *******************************************************************
- * » Copyright Dylzqn (c) 2015. All rights Reserved.
- * » Any code contained within this document, and any associated APIs with similar branding
- * » are the sole property of Dylzqn because he never loved Fabelz. Distribution, reproduction, taking snippets, or
- * » claiming any contents as your own will break the terms of the licence, and void any
- * » agreements with you. the third party.
- * » Thanks :D
- * ********************************************************************
- */
 public class Main extends JavaPlugin {
 
     public static Main main;
@@ -48,9 +38,7 @@ public class Main extends JavaPlugin {
         return confirmedYoutube;
     }
 
-    public static ArrayList<Player> getConfirmedTwitch() {
-        return confirmedTwitch;
-    }
+    public static ArrayList<Player> getConfirmedTwitch() { return confirmedTwitch; }
 
 
     public static MessageManager getMessageManager() {
