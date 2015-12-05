@@ -4,6 +4,8 @@ import me.anml.archaniafactions.advertisements.commands.AdAdminCommand;
 import me.anml.archaniafactions.advertisements.commands.AdCommand;
 import me.anml.archaniafactions.advertisements.commands.TwitchCommand;
 import me.anml.archaniafactions.advertisements.commands.YoutubeCommand;
+import me.anml.archaniafactions.reportgui.Report;
+import me.anml.archaniafactions.reportgui.ReportManager;
 import me.anml.archaniafactions.runnables.ArchaniaRunnable;
 import me.anml.archaniafactions.utils.MessageManager;
 import org.bukkit.Bukkit;
@@ -19,12 +21,22 @@ public class Main extends JavaPlugin {
 
     public static Main main;
     private static MessageManager messageManager;
+    private static ReportManager reportManager;
 
+    private static Map<Report, Integer> queuedReports = new HashMap<>();
     private static ArrayList<Player> confirmedYoutube = new ArrayList<>();
     private static Map<UUID, Long> waitingYoutube = new HashMap<>();
     private static ArrayList<Player> confirmedTwitch = new ArrayList<>();
     private static Map<UUID, Long> waitingTwitch = new HashMap<>();
     private ArchaniaRunnable archaniaRunnable;
+
+    public static Map<Report, Integer> getQueuedReports() {
+        return queuedReports;
+    }
+
+    public static ReportManager getReportManager() {
+        return reportManager;
+    }
 
     public static Map<UUID, Long> getWaitingYoutube() {
         return waitingYoutube;
@@ -50,6 +62,7 @@ public class Main extends JavaPlugin {
 
         main = this;
         messageManager = new MessageManager();
+        reportManager = new ReportManager();
         getCommand("ad").setExecutor(new AdCommand());
         getCommand("adadmin").setExecutor(new AdAdminCommand());
         getCommand("youtube").setExecutor(new YoutubeCommand());
