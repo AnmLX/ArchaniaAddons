@@ -5,6 +5,7 @@ import me.anml.archaniafactions.advertisements.commands.AdCommand;
 import me.anml.archaniafactions.advertisements.commands.TwitchCommand;
 import me.anml.archaniafactions.advertisements.commands.YoutubeCommand;
 import me.anml.archaniafactions.reportgui.Report;
+import me.anml.archaniafactions.reportgui.ReportCommand;
 import me.anml.archaniafactions.reportgui.ReportManager;
 import me.anml.archaniafactions.runnables.ArchaniaRunnable;
 import me.anml.archaniafactions.utils.MessageManager;
@@ -67,6 +68,7 @@ public class Main extends JavaPlugin {
         getCommand("adadmin").setExecutor(new AdAdminCommand());
         getCommand("youtube").setExecutor(new YoutubeCommand());
         getCommand("twitch").setExecutor(new TwitchCommand());
+        getCommand("report").setExecutor(new ReportCommand());
 
         saveDefaultConfig();
 
