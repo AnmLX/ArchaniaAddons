@@ -31,6 +31,7 @@ public class ReportCommand implements CommandExecutor {
 
             if(!(player.hasPermission("archaniaaddons.report"))) {
                 player.sendMessage(messageManager.colorize(messageManager.noPermission));
+                return false;
             }
 
             if(args.length >= 1) {
