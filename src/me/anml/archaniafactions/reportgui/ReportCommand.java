@@ -61,6 +61,8 @@ public class ReportCommand implements CommandExecutor {
                     player.openInventory(inventory);
                 }
 
+            } else {
+                player.sendMessage(messageManager.colorize("&4Usage: &c/report <player>"));
             }
         }
         return false;

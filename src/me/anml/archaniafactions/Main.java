@@ -6,11 +6,14 @@ import me.anml.archaniafactions.advertisements.commands.TwitchCommand;
 import me.anml.archaniafactions.advertisements.commands.YoutubeCommand;
 import me.anml.archaniafactions.reportgui.Report;
 import me.anml.archaniafactions.reportgui.ReportCommand;
+import me.anml.archaniafactions.reportgui.ReportListener;
 import me.anml.archaniafactions.reportgui.ReportManager;
 import me.anml.archaniafactions.runnables.ArchaniaRunnable;
 import me.anml.archaniafactions.utils.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -58,6 +61,10 @@ public class Main extends JavaPlugin {
         return messageManager;
     }
 
+    private static void registerEvents(Plugin plugin, Listener listener) {
+
+        Bukkit.getServer().getPluginManager().registerEvents(listener, plugin);
+    }
     @Override
     public void onEnable() {
 
@@ -69,6 +76,8 @@ public class Main extends JavaPlugin {
         getCommand("youtube").setExecutor(new YoutubeCommand());
         getCommand("twitch").setExecutor(new TwitchCommand());
         getCommand("report").setExecutor(new ReportCommand());
+
+        registerEvents(this, new ReportListener());
 
         saveDefaultConfig();
 
